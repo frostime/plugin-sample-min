@@ -12,7 +12,7 @@ const siyuan = require('siyuan');
 
 const CONF_FILE = 'conf.json';
 
-export class ExamplePlugin extends siyuan.Plugin {
+module.exports = class ExamplePlugin extends siyuan.Plugin {
 
     config = {};
 
