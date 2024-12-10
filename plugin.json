@@ -7,10 +7,17 @@
   "backends": [
     "windows",
     "linux",
-    "darwin"
+    "darwin",
+    "ios",
+    "android",
+    "harmony",
+    "docker"
   ],
   "frontends": [
     "desktop",
+    "mobile",
+    "browser-desktop",
+    "browser-mobile",
     "desktop-window"
   ],
   "displayName": {
