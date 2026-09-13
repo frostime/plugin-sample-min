@@ -2,8 +2,8 @@
   "name": "plugin-sample-min",
   "author": "frostime",
   "url": "https://github.com/frostime/plugin-sample-min",
-  "version": "0.1.0",
-  "minAppVersion": "2.10.0",
+  "version": "0.2.0",
+  "minAppVersion": "3.8.0",
   "backends": [
     "windows",
     "linux",
@@ -13,24 +13,29 @@
     "desktop",
     "desktop-window"
   ],
+  "disabledInPublish": false,
   "displayName": {
-    "en_US": "Plugin sample minimum",
-    "zh_CN": "插件样例最简版"
+    "default": "Plugin sample minimum",
+    "zh-CN": "插件样例最简版"
   },
   "description": {
-    "en_US": "A minimum SiYuan plugin sample",
-    "zh_CN": "最简版本的思源插件样例"
+    "default": "A minimum SiYuan plugin sample",
+    "zh-CN": "最简版本的思源插件样例"
   },
   "readme": {
-    "en_US": "README.md",
-    "zh_CN": "README_zh_CN.md"
+    "default": "README.md",
+    "zh-CN": "README.zh-CN.md"
   },
+  "icon": "icon.png",
+  "preview": "preview.png",
   "funding": {
     "custom": [
       "https://afdian.net/a/frostime"
     ]
   },
   "keywords": [
-    "plugin", "sample", "插件样例"
+    "plugin",
+    "sample",
+    "插件样例"
   ]
 }

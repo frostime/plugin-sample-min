@@ -11,12 +11,21 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Validate manifest version
+        run: |
+          expected_version="${GITHUB_REF_NAME#v}"
+          actual_version="$(jq -r '.version' plugin.json)"
+          test "$actual_version" = "$expected_version"
 
       - name: Create package.zip
         run: |
-          zip -r package.zip . -x '*.git*' './scripts/*' './.github/*'
-
+          rm -f package.zip
+          zip -r -X package.zip \
+            README.md README.zh-CN.md LICENSE \
+            plugin.json index.js index.css \
+            icon.png preview.png i18n
 
       - name: Release
         uses: ncipollo/release-action@v1
@@ -25,6 +34,6 @@ jobs:
           artifactErrorsFailBuild: true
           artifacts: "package.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.ref }}
-          name: Release ${{ github.ref }}
+          tag: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
           prerelease: false
